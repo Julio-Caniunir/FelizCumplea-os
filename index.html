@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Felicitación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --balloon1-bg-color: #ffd1dc; /* Rosa pastel */
+            --balloon2-bg-color: #ffecd1; /* Crema pastel */
+            --balloon3-bg-color: #d4f1f9; /* Azul pastel */
+            --balloon4-bg-color: #e1ccec; /* Lila pastel */
+            --balloon5-bg-color: #f9e2ae; /* Amarillo pastel */
+
+            --balloon-border-color: rgba(0, 0, 0, 0.2); /* Color de borde */
+            --balloon-anim-1: balloon1 6s ease-in-out infinite;
+            --balloon-anim-2: balloon2 5s ease-in-out infinite;
+            --balloon-anim-3: balloon3 7s ease-in-out infinite;
+            --balloon-anim-4: balloon4 4s ease-in-out infinite;
+            --balloon-anim-5: balloon5 8s ease-in-out infinite;
+        }
+
+        body {
+            font-family: 'Patrick Hand', cursive;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url("https://i.ibb.co/8cQWy33/hg68-j9wg-200706.jpg") no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .happy,
+        .birthday {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 10px 0;
+            gap: 10px;
+        }
+
+        .name {
+            margin-top: 20px;
+            font-size: 3rem;
+            color: #4f6d7a;
+            display: inline-block;
+            animation: tiltText 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes tiltText {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+            100% { transform: rotate(-5deg); }
+        }
+
+        .balloon {
+            width: 70px;
+            height: 90px;
+            margin: 5px;
+            border-radius: 50%;
+            border: 2px solid var(--balloon-border-color); /* Borde agregado */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: var(--balloon-anim-1);
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4f6d7a;
+        }
+
+        .balloon::after {
+            position: absolute;
+            bottom: -10px;
+            left: calc(50% - 2px);
+            content: "";
+            width: 2px;
+            height: 10px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .balloon1 { background: var(--balloon1-bg-color); animation: var(--balloon-anim-1); }
+        .balloon2 { background: var(--balloon2-bg-color); animation: var(--balloon-anim-2); }
+        .balloon3 { background: var(--balloon3-bg-color); animation: var(--balloon-anim-3); }
+        .balloon4 { background: var(--balloon4-bg-color); animation: var(--balloon-anim-4); }
+        .balloon5 { background: var(--balloon5-bg-color); animation: var(--balloon-anim-5); }
+
+        @keyframes balloon1 {
+            0% { transform: translateY(0) rotate(-10deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+            100% { transform: translateY(0) rotate(-10deg); }
+        }
+
+        @keyframes balloon2 {
+            0% { transform: translateY(0) rotate(15deg); }
+            50% { transform: translateY(-15px) rotate(-15deg); }
+            100% { transform: translateY(0) rotate(15deg); }
+        }
+
+        @keyframes balloon3 {
+            0% { transform: translateY(0) rotate(-20deg); }
+            50% { transform: translateY(-25px) rotate(20deg); }
+            100% { transform: translateY(0) rotate(-20deg); }
+        }
+
+        @keyframes balloon4 {
+            0% { transform: translateY(0) rotate(5deg); }
+            50% { transform: translateY(-10px) rotate(-5deg); }
+            100% { transform: translateY(0) rotate(5deg); }
+        }
+
+        @keyframes balloon5 {
+            0% { transform: translateY(0) rotate(-10deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+            100% { transform: translateY(0) rotate(-10deg); }
+        }
+        .teddy {
+            margin-top: 10px;
+            width: 250px;
+            height: auto;
+        }
+        @media (max-width: 768px) {
+            .balloon {
+                width: 50px;
+                height: 70px;
+                font-size: 1.2rem;
+                border: 1.5px solid var(--balloon-border-color); /* Bordes más finos en pantallas medianas */
+            }
+            .name {
+                font-size: 2.5rem;
+            }
+            .teddy {
+                width: 220px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .balloon {
+                width: 30px;
+                height: 40px;
+                font-size: 1rem;
+                margin: 2px;
+                border: 1px solid var(--balloon-border-color); /* Bordes más finos en pantallas pequeñas */
+            }
+            .name {
+                font-size: 2rem;
+            }
+            .happy, .birthday {
+                gap: 5px;
+            }
+            .teddy {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="happy">
+            <div class="balloon balloon1">F</div>
+            <div class="balloon balloon2">E</div>
+            <div class="balloon balloon3">L</div>
+            <div class="balloon balloon4">I</div>
+            <div class="balloon balloon5">Z</div>
+        </div>
+        <div class="birthday">
+            <div class="balloon balloon3">C</div>
+            <div class="balloon balloon1">U</div>
+            <div class="balloon balloon4">M</div>
+            <div class="balloon balloon2">P</div>
+            <div class="balloon balloon5">L</div>
+            <div class="balloon balloon1">E</div>
+            <div class="balloon balloon3">A</div>
+            <div class="balloon balloon4">Ñ</div>
+            <div class="balloon balloon5">O</div>
+            <div class="balloon balloon1">S</div>
+        </div>
+        <div class="name">Marianne</div>
+        <img src="https://i.ibb.co/zFMjWkh/pngwing-com.png" alt="Teddy Bear" class="teddy">
+
+    </div>
+    
+</body>
+</html>
